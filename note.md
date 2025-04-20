@@ -1,8 +1,10 @@
 notes
 
 ## Todo
- [ ] Setup Java Gradle + Sprint Boot Java App
+ [X] Setup Java Gradle + Sprint Boot Java App
    [ ] Use GUI injection
+   [ ] Setup Logging
+   [ ] Setup Configuration loader
  [ ] Setup Swagger UI Integration
  [ ] Setup Unit Test (Optional)
  [ ] Setup React Web App 

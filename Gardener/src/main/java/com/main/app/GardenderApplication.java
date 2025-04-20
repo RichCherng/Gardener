@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.main.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
 @RestController
-public class DemoApplication {
+public class GardenderApplication {
 
     public static void main(String[] args) {
         System.out.println("Starting the application...");
         
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(GardenderApplication.class, args);
         
         System.out.println("Application started successfully.");
     }
