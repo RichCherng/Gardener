@@ -1,0 +1,58 @@
+# Gradle build files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Gradle wrapper logs
+gradle-app.setting
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+*.out
+
+# Compiled class files
+*.class
+
+# JARs, WARs, etc
+*.jar
+*.war
+*.ear
+
+# Environment files (optional)
+.env
+.env.*
+
+# Test coverage
+coverage/
+jacoco.exec
+test-results/
+
+# Local config files
+*.swp
+*.swo
+
+# System files
+*~
+
+# Swagger/OpenAPI generated (optional)
+openapi.yaml
+openapi.json
+
+# Node/Yarn (if you add frontend)
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
