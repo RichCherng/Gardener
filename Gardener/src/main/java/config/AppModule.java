@@ -1,10 +1,11 @@
-package com.main.guice;
+package config;
 
 import com.google.inject.AbstractModule;
+import service.*;
 
 public class AppModule extends AbstractModule {
     @Override
     protected void configure() {
-        // bind(MyService.class).to(MyServiceImpl.class);
+        bind(GreetingService.class).to(GreetingServiceImpl.class);
     }
 }

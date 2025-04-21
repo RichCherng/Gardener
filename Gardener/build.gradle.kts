@@ -1,7 +1,6 @@
 plugins {
-    id("org.springframework.boot") version "3.2.5"
-    id("io.spring.dependency-management") version "1.1.4"
     java
+    application
 }
 
 group = "com.example"
@@ -12,13 +11,34 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+val jerseyVersion = "2.38"
+val jettyVersion = "9.4.53.v20231009"  // latest Jetty 9.x that uses javax.servlet
 
+dependencies {
+    // Jersey core
+    implementation("org.glassfish.jersey.core:jersey-server:$jerseyVersion")
+    implementation("org.glassfish.jersey.containers:jersey-container-servlet:$jerseyVersion")
+    implementation("org.glassfish.jersey.containers:jersey-container-jetty-http:$jerseyVersion")
+    implementation("org.glassfish.jersey.inject:jersey-hk2:$jerseyVersion")
+
+    // ✅ JAX-RS API for javax.ws.rs
+    implementation("javax.ws.rs:javax.ws.rs-api:2.1.1")
+
+    // ✅ Servlet API for Jetty 9 (javax.servlet)
+    implementation("javax.servlet:javax.servlet-api:4.0.1")
+
+    // Jetty core (javax version)
+    implementation("org.eclipse.jetty:jetty-server:$jettyVersion")
+    implementation("org.eclipse.jetty:jetty-servlet:$jettyVersion")
+
+    // Guice
     implementation("com.google.inject:guice:7.0.0")
-    implementation("javax.servlet:javax.servlet-api:4.0.1") // for servlet binding (if needed)
-    implementation("org.eclipse.jetty:jetty-server:11.0.14") // or any HTTP server
+
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+}
+
+application {
+    mainClass.set("GardenerApp")
 }
 
 tasks.test {

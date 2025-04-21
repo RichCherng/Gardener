@@ -15,6 +15,9 @@ bootrun:
 clean:
 	./gradlew clean
 
+clean-build:
+	./gradlew clean build --refresh-dependencies
+
 ## Run tests
 test:
 	./gradlew test
