@@ -10,10 +10,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.servlet.ServletContainer;
 
-import javax.ws.rs.*;
-import javax.servlet.http.HttpServlet;
-
-public class MainApp {
+public class GardenerApp {
     public static void main(String[] args) throws Exception {
         Injector injector = Guice.createInjector(new AppModule());
 

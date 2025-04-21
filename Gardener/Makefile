@@ -1,31 +1,29 @@
-APP_NAME=gardener-service
-JAR_FILE=build/libs/$(APP_NAME)-0.0.1-SNAPSHOT.jar
+APP_NAME=gardener
+JAR_FILE=build/libs/$(APP_NAME)-all.jar
+MAIN_CLASS=app.MainApp
 
-.PHONY: run build clean test jar bootrun
+.PHONY: run build clean test jar
 
-## Build the project
+# Compile and build
 build:
 	./gradlew build
 
-## Run the Spring Boot app via bootRun
-bootrun:
-	./gradlew bootRun
+# Run the app via Gradle application plugin
+run:
+	./gradlew run
 
-## Clean build artifacts
+# Clean build artifacts
 clean:
 	./gradlew clean
 
-clean-build:
-	./gradlew clean build --refresh-dependencies
-
-## Run tests
+# Run tests
 test:
 	./gradlew test
 
-## Build the executable JAR
+# Create a fat/uber JAR (optional if using Shadow plugin)
 jar:
-	./gradlew bootJar
+	./gradlew jar
 
-## Run the app via JAR file
-run: jar
-	java -jar $(JAR_FILE)
+# Run the app directly with Java (if you built an uber/fat jar)
+runjar: jar
+	java -cp $(JAR_FILE) $(MAIN_CLASS)

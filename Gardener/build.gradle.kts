@@ -38,7 +38,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("GardenerApp")
+    mainClass.set("app.GardenerApp")
 }
 
 tasks.test {
