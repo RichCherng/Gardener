@@ -15,6 +15,10 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    implementation("com.google.inject:guice:7.0.0")
+    implementation("javax.servlet:javax.servlet-api:4.0.1") // for servlet binding (if needed)
+    implementation("org.eclipse.jetty:jetty-server:11.0.14") // or any HTTP server
 }
 
 tasks.test {
