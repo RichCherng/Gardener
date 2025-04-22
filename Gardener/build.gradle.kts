@@ -34,6 +34,16 @@ dependencies {
     // Guice
     implementation("com.google.inject:guice:7.0.0")
 
+    // ✅ Swagger Core + JAX-RS Integration
+    implementation("io.swagger.core.v3:swagger-jaxrs2:2.2.21")
+    implementation("io.swagger.core.v3:swagger-integration:2.2.21")
+    implementation("io.swagger.core.v3:swagger-annotations:2.2.21")
+    implementation("io.swagger.core.v3:swagger-core:2.2.21")
+    implementation("io.swagger.core.v3:swagger-models:2.2.21")
+
+    // ✅ Serve Swagger UI static content
+    implementation("org.webjars:swagger-ui:4.15.5")
+
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
 }
 
