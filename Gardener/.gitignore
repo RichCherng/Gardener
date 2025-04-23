@@ -56,3 +56,51 @@ dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# === Bazel output ===
+bazel-*
+bazel-bin/
+bazel-out/
+bazel-testlogs/
+bazel-workspace/  # just in case
+bazel-*/*
+
+# === IntelliJ / Eclipse / VS Code ===
+.idea/
+*.iml
+*.ipr
+*.iws
+*.classpath
+*.project
+.vscode/
+*.sw?
+
+# === OS / Misc ===
+.DS_Store
+Thumbs.db
+*.log
+
+# === Build tools ===
+*.class
+*.jar
+*.war
+*.ear
+target/
+build/
+out/
+
+# === Bzlmod cache (optional) ===
+.bazelrc.user
+MODULE.bazel.lock
+MODULE.bazel.lock.repo
+
+# === Coverage or temp ===
+*.exec
+*.hprof
+*.tmp
+*.bak
+
+# === Java tooling ===
+.gradle/
+.mvn/

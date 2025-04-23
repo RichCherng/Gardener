@@ -1,0 +1,6 @@
+java_binary(
+    name = "myapp",
+    srcs = ["App.java"],
+    main_class = "myapp.App",
+    visibility = ["//visibility:public"],
+)

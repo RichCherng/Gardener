@@ -1,0 +1,22 @@
+deps = [
+    # "@maven//:org_eclipse_jetty_jetty_server",
+    # "@maven//:org_eclipse_jetty_jetty_servlet",
+    # "@maven//:org_glassfish_jersey_containers_jersey_container_servlet_core",
+    # "@maven//:org_glassfish_jersey_core_jersey_server",
+    # "@maven//:org_glassfish_jersey_inject_jersey_hk2",
+    # "@maven//:jakarta_ws_rs_jakarta_ws_rs_api",
+    # "@maven//:com_google_inject_guice",
+    # "@maven//:org_glassfish_hk2_guice_bridge",
+]
+
+
+# Optional - helpful if you want to run with `bazel run //:myapp`
+# java_binary(
+#     name = "myapp",
+#     deps = ["//src/java/myapp:myapp"],
+# )
+
+alias(
+    name = "myapp",
+    actual = "//src/java/myapp:myapp",
+)

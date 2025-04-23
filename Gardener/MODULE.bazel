@@ -1,0 +1,10 @@
+module(
+    name = "my_bazel_project",
+    version = "0.1.0",
+)
+
+bazel_dep(name = "rules_java", version = "6.3.3")
+
+# Needed to actually use the Java rules
+java = use_extension("@rules_java//java:extensions.bzl", "java")
+use_repo(java)
