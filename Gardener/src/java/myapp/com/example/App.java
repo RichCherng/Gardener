@@ -15,5 +15,10 @@ public class App extends Application<MyConfig> {
     @Override
     public void run(MyConfig config, Environment environment) {
         System.out.println("Hello Dropwizard!");
+        environment.jersey().register(new MyResource(new MyServiceImpl()));
+
+        HelloHealthCheck healthCheck = new HelloHealthCheck();
+        environment.healthChecks().register("hello", healthCheck);
+
     }
 }

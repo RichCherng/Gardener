@@ -1,4 +1,4 @@
-package myapp;
+package com.example;
 
 import com.google.inject.AbstractModule;
 
