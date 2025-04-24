@@ -17,6 +17,6 @@ deps = [
 # )
 
 alias(
-    name = "myapp",
-    actual = "//src/java/myapp:myapp",
+    name = "server",
+    actual = "//src/java/myapp/com/example:server",
 )
