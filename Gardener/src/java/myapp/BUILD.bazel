@@ -15,7 +15,7 @@ java_library(
 
 java_binary(
     name = "server",
-    srcs = glob(["com/example/*.java"]),
+    srcs = glob(["com/example/**/*.java"]),
     main_class = "com.example.App",
     visibility = ["//visibility:public"],
     deps = [
