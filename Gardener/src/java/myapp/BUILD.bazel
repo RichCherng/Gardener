@@ -1,0 +1,29 @@
+java_library(
+    name = "dropwizard_wrapper",
+    exports = ["@dropwizard_core//:io_dropwizard_dropwizard_core"],
+)
+
+java_library(
+    name = "jaxrs_wrapper",
+    exports = ["@jaxrs_api//:jakarta_ws_rs_jakarta_ws_rs_api"],
+)
+
+java_library(
+    name = "inject_wrapper",
+    exports = ["@javax_inject//:javax_inject_javax_inject"],
+)
+
+java_binary(
+    name = "server",
+    srcs = glob(["com/example/**/*.java"]),
+    main_class = "com.example.App",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":dropwizard_wrapper",
+        ":jaxrs_wrapper",
+        "@dropwizard_core//:io_dropwizard_metrics_metrics_healthchecks",
+        "@dropwizard_core//:jakarta_inject_jakarta_inject_api",
+        "@guice//:com_google_inject_guice",
+        "@guice//:jakarta_inject_jakarta_inject_api",
+    ],
+)
