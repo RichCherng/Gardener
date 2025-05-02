@@ -13,10 +13,18 @@ java_library(
     exports = ["@javax_inject//:javax_inject_javax_inject"],
 )
 
+# Loading Frontend 
+filegroup(
+    name = "react_static_files",
+    srcs = ["//frontend:react_build"],
+)
+
 java_binary(
     name = "server",
     srcs = glob(["com/example/**/*.java"]),
     main_class = "com.example.App",
+    resources = [":react_static_files"],
+    resource_strip_prefix = "frontend/dist",
     visibility = ["//visibility:public"],
     deps = [
         ":dropwizard_wrapper",

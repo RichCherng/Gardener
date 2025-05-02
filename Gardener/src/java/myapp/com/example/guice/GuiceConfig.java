@@ -1,5 +1,6 @@
 package com.example.guice;
 
+import com.example.FrontEndResource;
 import com.example.MyResource;
 import com.example.MyService;
 import com.example.MyServiceImpl;
@@ -11,6 +12,7 @@ public class GuiceConfig extends AbstractModule {
     protected void configure() {
         // Bind your services and other dependencies here
         bind(MyService.class).to(MyServiceImpl.class);
+        bind(FrontEndResource.class);
     }
 
     @Provides

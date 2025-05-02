@@ -1,0 +1,28 @@
+load("@aspect_rules_js//js:defs.bzl", "js_run_binary")
+
+js_run_binary(
+    name = "build_react",
+    tool = "@npm//:npm",
+    args = ["run", "build"],
+    srcs = [
+        "package.json",
+        "package-lock.json",
+        "vite.config.ts",
+        "tsconfig.json",
+        "tsconfig.node.json",
+        # "src",
+    ] + glob(["src/**"]) ,
+    outs = ["dist"],
+)
+
+# js_run_binary(
+#     name = "build_react",
+#     tool = ":vite_build_binary",
+#     outs = ["dist"],
+# )
+
+filegroup(
+    name = "react_build",
+    srcs = ["dist"],
+    visibility = ["//visibility:public"],
+)

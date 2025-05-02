@@ -1,0 +1,18 @@
+load("@aspect_rules_js//js:defs.bzl", "js_run_binary")
+
+js_run_binary(
+    name = "build_react",
+    tool = "@npm//:npm",
+    args = ["run", "build"],
+    srcs = [
+        "package.json",
+        "package-lock.json",
+    ],
+    outs = ["build"],
+)
+    
+filegroup(
+    name = "react_build",
+    srcs = ["build"],
+    visibility = ["//visibility:public"],
+)
