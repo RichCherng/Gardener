@@ -1,0 +1,39 @@
+# Gradle build artifacts
+/build/
+/.gradle/
+/out/
+
+# IntelliJ IDEA
+.idea/
+/*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# Compiled class files
+*.class
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Dropwizard configuration
+config.yml
+
+# JAR files
+*.jar
+*.war
+*.ear
